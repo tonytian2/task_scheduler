@@ -34,10 +34,11 @@ Use port 5000 to access the backend
 ## post task
 #### endpoint: "/texttask", 
 #### method: "POST"
-#### request format (task name need to be unique)
+#### request format (task name need to be unique, priority can be 1,2 or 3, 3 is highest, 2 is default)
 ```cmd
 {
     "task_name":"new task",
+    "priority":3,
     "task_description": "need to finish math homework "
 }
 ```
@@ -46,7 +47,7 @@ Use port 5000 to access the backend
 #### endpoint: "/texttask/all", 
 #### method: "GET"
 
-## post task
+## update task by task id
 #### endpoint: "/texttask/update", 
 #### method: "POST"
 #### request format (only task_id is required, other fields are optional)
@@ -56,5 +57,15 @@ Use port 5000 to access the backend
     "task_descrition": "updated description",
     "priority":1,
     "finished":1
+}
+```
+
+## delete task by id
+#### endpoint: "/texttask", 
+#### method: "DELETE"
+#### request format
+```cmd
+{
+    "task_id":1
 }
 ```
