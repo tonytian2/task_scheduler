@@ -69,3 +69,20 @@ Use port 5000 to access the backend
     "task_id":1
 }
 ```
+
+
+## send others your unfinished tasks by email periodically, data updates in real time
+#### endpoint: "/emailReporter", 
+#### method: "POST"
+#### request format (task_name is unique, cron_exp see cron expression "* * * * *" means every minute, email receiver is defined by "receiver")
+```cmd
+{
+   {
+    "content": {"email_body": "The report is in the attachment", "title": "Unfinished Tasks Report",
+    "receiver": "imtonytian@gmail.com",
+    "sql_file": "select_unfinished_text_tasks",
+    "csv_file": "report1"},
+    "cron_exp" :"* * * * *",
+    "task_name" : "task1"
+}
+```
