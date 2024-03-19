@@ -1,0 +1,1 @@
+select * from tasks where finished_time is null;
