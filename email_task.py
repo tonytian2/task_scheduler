@@ -69,7 +69,7 @@ def emailReminderDelete():
             job.clear
             cron.write()
 
-            query = "DELETE FROM tasks WHERE task_name=?;"
+            query = "DELETE FROM emailtasks WHERE task_name=?;"
             with sqlite3.connect(app_db_path) as app_db:
                 cur = app_db.cursor()
                 cur.execute(query, task_name)
