@@ -32,7 +32,7 @@ def update_task():
     task_id = data["task_id"]
     updated_items = {}
     updated_items["task_description"] = data["task_description"] if "task_description" in data else None
-    updated_items["priority"] = data["task_description"] if "task_description" in data else None
+    updated_items["priority"] = data["priority"] if "priority" in data else None
     updated_items["finished_time"] = datetime.datetime.now().isoformat() if "finished" in data else None   
     
     updates = ''.join("{}=?, ".format(k) if updated_items[k] else " " for k in updated_items.keys()).strip()[:-1]
